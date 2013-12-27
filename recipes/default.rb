@@ -37,5 +37,5 @@ include_recipe 'sch_motd::chef-fail'
 cron 'update motd' do
 	action	:create
 	minute	"*/1"
-	command "rm -rf /etc/motd ; for i in $(ls -1 /etc/update-motd.d/* | sort -V) ; do $i >> /etc/motd ; done"
+	command "rm -rf /etc/motd ; for i in $(ls -1v /etc/update-motd.d/*) ; do $i >> /etc/motd ; done"
 end
