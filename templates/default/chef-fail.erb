@@ -1,0 +1,9 @@
+ERROR_FILE=<%= @error_file %>
+LOG_DIR=<%= @log_dir %>
+
+if [ -f $ERROR_FILE ]; then
+	echo "Chef [0;31;49mFailed[0m on Last Run"
+	if [ $LOG_DIR ]; then
+		echo "Log File Location: $LOG_DIR"
+	fi
+fi
