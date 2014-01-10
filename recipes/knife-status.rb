@@ -30,8 +30,8 @@ interval = Integer(interval) / 60
 
 sch_motd '98-knife-status' do
   source    'knife-status.erb'
-  variables interval: interval,
-            timestamp_file: "#{Chef::Config[:file_cache_path]}/last_successful_chef_run"
+  variables :interval => interval,
+            :timestamp_file => "#{Chef::Config[:file_cache_path]}/last_successful_chef_run"
 
   only_if { ::File.directory? '/etc/update-motd.d' }
 end

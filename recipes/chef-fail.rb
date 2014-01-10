@@ -23,8 +23,8 @@ end
 
 sch_motd "100-chef-fail" do
     source      'chef-fail.erb'
-    variables   error_file: error_file,
-                log_dir: log_dir
+    variables   :error_file => error_file,
+                :log_dir => log_dir
 
     only_if { ::File.directory? '/etc/update-motd.d' }
 end
