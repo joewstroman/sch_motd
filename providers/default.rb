@@ -24,11 +24,11 @@ action :create do
 
   # default variables
   default_variables = {
-    update_motd: update_motd,
-    environment: node.chef_environment,
-    domain:      node['domain'],
-    hostname:    node['hostname'],
-    color:       new_resource.color,
+    :update_motd => update_motd,
+    :environment => node.chef_environment,
+    :domain => node['domain'],
+    :hostname => node['hostname'],
+    :color => new_resource.color,
   }
 
   if update_motd
